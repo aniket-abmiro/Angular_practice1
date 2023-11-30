@@ -6,15 +6,7 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix border" *ngFor="let recipe of recipes">
-            <div class="float-start p-3">
-                <h4 class="mb-1 ">{{recipe.name}}</h4>
-                <p class="mb-1">{{recipe.description}}</p>
-            </div>
-            <span class="float-end p-3">
-                <img [src]="recipe.imagePath" class="rounded img-fluid" style="max-height: 50px;" alt="...">
-            </span>
-        </a>
-        <app-recipe-item></app-recipe-item>
+        <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl"
+            (recipeSelected)="onSelectRecipeItem(recipeEl)"></app-recipe-item>
     </div>
 </div>

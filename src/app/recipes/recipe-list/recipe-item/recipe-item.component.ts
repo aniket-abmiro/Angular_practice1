@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 
 @Component({
@@ -8,10 +8,13 @@ import { Recipe } from '../../recipe.model';
 })
 export class RecipeItemComponent {
 
-  recipes: Recipe[] = [
-    new Recipe('test recipe', 'this is simple test', 'https://hips.hearstapps.com/hmg-prod/images/crepes-index-64347419e3c7a.jpg?crop=0.888888888888889xw:1xh;center,top&resize=1200:*')
-  ];
+  @Input() recipe: Recipe;
+  @Output() recipeSelected = new EventEmitter<void>();
   constructor() {
+
+  }
+  onSelectRecipeItem() {
+    this.recipeSelected.emit();
 
   }
 }
