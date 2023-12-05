@@ -1,9 +1,11 @@
-<a href="#" (click)="onSelect()" class="list-group-item clearfix border">
-    <div class="float-start p-3">
-        <h4 class="mb-1 ">{{recipe.name}}</h4>
-        <p class="mb-1">{{recipe.description}}</p>
-    </div>
-    <span class="float-end p-3">
-        <img [src]="recipe.imagePath" class="rounded img-fluid" style="max-height: 50px;" alt="...">
-    </span>
-</a>
+<li class="list-group-item">
+    <a style="cursor: pointer;" [routerLink]="[index]" routerLinkActive="active" class="clearfix ">
+        <div class="float-start p-3">
+            <h4 class="mb-1 ">{{recipe.name}}</h4>
+            <p class="mb-1">{{recipe.description}}</p>
+        </div>
+        <span class="float-end p-3">
+            <img [src]="recipe.imagePath" class="rounded img-fluid" style="max-height: 50px;" alt="...">
+        </span>
+    </a>
+</li>
